@@ -26,7 +26,7 @@
     "truffle-flattener": "^1.4.2",
     "web3": "1.0.0-beta.55"
   },
-  "homepage": "https://johjoseph.github.io/tokenft/",
+  "homepage": "https://toke-nft.herokuapp.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

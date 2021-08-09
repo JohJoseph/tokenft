@@ -7,73 +7,54 @@ import peace from '../peace.png'
 const CARD_ARRAY = [
   {
     name: 'fries',
-    img: '/images/fries.png'
+    img: '../images/fries.png'
   },
   {
     name: 'cheeseburger',
-    img: '/images/cheeseburger.png'
+    img: '../images/cheeseburger.png'
   },
   {
     name: 'hotdog',
-    img: '/images/hotdog.png'
+    img: '../images/hotdog.png'
   },
   {
     name: 'ice-cream',
-    img: '/images/ice-cream.png'
+    img: '../images/ice-cream.png'
   },
   {
     name: 'milkshake',
-    img: '/images/milkshake.png'
+    img: '../images/milkshake.png'
   },
   {
     name: 'pizza',
-    img: '/images/pizza.png'
+    img: '../images/pizza.png'
   },
   {
     name: 'fries',
-    img: '/images/fries.png'
+    img: '../images/fries.png'
   },
   {
     name: 'cheeseburger',
-    img: '/images/cheeseburger.png'
+    img: '../images/cheeseburger.png'
   },
   {
     name: 'hotdog',
-    img: '/images/hotdog.png'
+    img: '../images/hotdog.png'
   },
   {
     name: 'ice-cream',
-    img: '/images/ice-cream.png'
+    img: '../images/ice-cream.png'
   },
   {
     name: 'milkshake',
-    img: '/images/milkshake.png'
+    img: '../images/milkshake.png'
   },
   {
     name: 'pizza',
-    img: '/images/pizza.png'
+    img: '../images/pizza.png'
   }
 ]
 class App extends Component {
-
-  async componentWillMount(){
-    await this.loadWeb3()
-    await this.loadBlockchainData()
-    this.setState({ cardArray: CARD_ARRAY.sort(() => 0.5 - Math.random()) })
-  }
-    
-  async loadWeb3() {
-    if (window.etherium) {
-      window.web3 = new Web3(window.etherium)
-      await window.etherium.enable()
-    }
-    else if (window.web3){
-      window.web3 = new Web3(window.web3.currentProvider)
-    }
-    else {
-      window.alert('Non-Etherium browser detected. You should consider trying Metamask!')
-    }
-  }
 
   async loadBlockchainData() {
     const web3 = window.web3
@@ -101,6 +82,25 @@ class App extends Component {
       }
     } else {
       alert('Smart contract not deployed to detected network.')
+    }
+  }
+
+  async componentWillMount(){
+    await this.loadWeb3()
+    await this.loadBlockchainData()
+    this.setState({ cardArray: CARD_ARRAY.sort(() => 0.5 - Math.random()) })
+  }
+    
+  async loadWeb3() {
+    if (window.etherium) {
+      window.web3 = new Web3(window.etherium)
+      await window.etherium.enable()
+    }
+    else if (window.web3){
+      window.web3 = new Web3(window.web3.currentProvider)
+    }
+    else {
+      window.alert('Non-Etherium browser detected. You should consider trying Metamask!')
     }
   }
 

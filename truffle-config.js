@@ -1,9 +1,3 @@
-/* git init
-git add <E:\Project\NFTgame>
-git commit -m "YAS Kween, commit"
-git remote add origin https://github.com/JohJoseph/tokenft.git
-git push -u origin master
-git push origin master */
 
 require('babel-register');
 require('babel-polyfill');
